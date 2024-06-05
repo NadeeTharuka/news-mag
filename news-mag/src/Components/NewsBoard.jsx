@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import NewsItem from "./NewsItem";
 
@@ -6,8 +7,7 @@ const NewsBoard = ({ category }) => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const url = 'https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}';
-    fetch(url)
+      const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${import.meta.env.VITE_API_KEY}`;    fetch(url)
       .then(response => {
         if (!response.ok) {
           throw new Error('Network response was not ok');
